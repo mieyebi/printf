@@ -17,7 +17,7 @@ int p_string(const char *s)
 	int count = 0, i = 0;
 
 	if (s == 0)
-		return (p_string("(nil)"));
+		return (p_string("(null)"));
 
 	while (s[i] != 0)
 	{

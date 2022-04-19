@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 
 	if (format == 0)
 	{
-		return (p_string("nil"));
+		return (-1);
 	}
 
 	va_start(ap, format);
