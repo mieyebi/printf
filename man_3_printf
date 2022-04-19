@@ -1,0 +1,78 @@
+                ALX Student Programmer's Manual
+
+NAME
+      _printf
+      
+SYNOPSIS
+
+      #include "main.h"
+      
+      int _printf(const char *format_string [%format_specifier], ...);
+      
+DESCRIPTION
+      
+      _printf prints the string pointed to by format_string to standard
+      output, format_string may contain 0 or more optional format_specifiers
+      in which case _printf will print a substitute value from the corres-
+      ponding optional arguments (denoted by ...) passed to it in place of the
+      format_specifier.
+      
+      The type of format_specifier must match the next argument passed to
+      get an expected result else output will promote the argument type to
+      the format_specifier type if possible for example a char promoted to an
+      int, if promotion is not possible the result is undefined.
+      
+  format_string
+      
+      format_string is a string literal or a pointer to a string which may contain
+      0 or more format_specifiers. format_specifiers are preceded with a '%' char-
+      acter which serves as a signal to check if the following character is a
+      valid format_specifier so as to give a directive to _printf to print to
+      stdout a formated string i.e. all the characters in format_string up to the 
+      character  just before the %[format_specifier] and then print the next argument 
+      in a form specified by format_specifier in place of the %[format_specifier].
+      
+  format_specifiers
+  
+      these are characters that specify what to be printed to stdout from the next
+      argument. valid format_specifiers are:
+      
+      d, i
+          
+          an int type argument is expected, they order for the argument to be printed as a
+          a signed decimal.
+          
+      c 
+        
+          a char type argument is expected, it orders for the character passed to be pri-
+          nted to stdout.
+          
+      s 
+      
+          a char * type argument is expected, it orders for the sting pointed to by the 
+          argument to be printed to stdout.
+          
+RETURN VALUE
+
+      _printf function returns the number of characters printed to stdout.
+      
+EXAMPLE
+
+      #include "main.h"
+      #include <stdarg.h>
+      
+      int main()
+      {
+        _printf("%s and %s have been alx's students for %d months.\n", "Diana", "Yusuf", 2);
+        
+        reurn (0);
+      }
+      
+      output:
+      
+            Diana and Yusuf have been alx's students for 2 months.
+            
+Authors: 
+      
+      Diana Wilson and Yusuf Isyaku.
+          
