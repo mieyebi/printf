@@ -4,8 +4,8 @@
 /**
  * ptr_to_function - a struct to aid function selection based on
  * c value
- * c: char to check to return corresponding function
- * f: function to return
+ * @c: char to check to return corresponding function
+ * @f: function to return
  */
 typedef struct ptr_to_function
 {
