@@ -2,7 +2,7 @@
 #define HEADER
 
 /**
- * ptr_to_function - a struct to aid function selection based on
+ * struct ptr_to_function - a struct to aid function selection based on
  * c value
  * @c: char to check to return corresponding function
  * @f: function to return
