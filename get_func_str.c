@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * get_func_str - returns p_string function
  * Return: p_string function
