@@ -12,13 +12,9 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	if (format == 0)
-	{
 		return (-1);
-	}
-
 	va_start(ap, format);
 	validator = check_string(format);
-
 	if (validator == 0)
 	{
 		total_count = p_string(format);
@@ -30,20 +26,19 @@ int _printf(const char *format, ...)
 		{
 			if (check_next_char(format + i))
 			{
-				if (format[i + 1] == 's')
-					side_count += p_string(va_arg(ap, const char *));
-				else if (format[i + 1] == 'c')
-					side_count += p_char(va_arg(ap, int));
-				else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-					side_count += get_func_int(format[i + 1])(va_arg(ap, int));
+				side_count += get_funcion(format[i + 1])(ap);
 				i += 2;
 			}
 			else
 			{
 				if (format[i + 1] == '%')
+				{
 					i++;
-				count += p_char(format[i]);
-				i++;
+					count += p_char(format[i]);
+					i++;
+				}
+				else if (format[i + 1] == 0)
+					return (-1);
 			}
 		}
 		else
