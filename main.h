@@ -10,17 +10,17 @@
 typedef struct ptr_to_function
 {
 	char c;
-	int (*f)(int);
+	int (*f)(va_list);
 } ptr_f;
 int p_char(char c);
 int p_string(const char *s);
 int p_uint(unsigned int a);
-int p_int_d(int a);
+int p_char_arg(va_list ap);
+int p_string_arg(va_list ap);
+int p_int_d(va_list ap);
 int check_string(const char *c);
 int check_next_char(const char *c);
-int (*get_func_int(char c))(int);
-int (*get_func_str())(const char *);
-int (*get_func_c())(char);
+int (*get_funcion(char c))(va_list);
 int _printf(const char *format, ...);
 
 #endif
