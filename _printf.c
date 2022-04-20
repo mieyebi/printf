@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		{
 			if (check_next_char(format + i))
 			{
-				side_count += get_funcion(format[i + 1])(ap);
+				side_count += get_function(format[i + 1])(ap);
 				i += 2;
 			}
 			else
